@@ -108,25 +108,9 @@
     trainFlag = [trainFlag flag753(temp(1:prePos))'];
     testSet = [testSet dataSet753(temp(prePos+1:end),:)'];
     testFlag = [testFlag flag753(temp(prePos+1:end))'];
+
 %%
-%%
-% pre=testSet(:,find(testSet(4,:)<0.7980));
-% preTag=testFlag(:,find(testSet(4,:)<0.7980));
-% preTemp=randperm(length(pre));
-% pre=pre(:,preTemp(1:10));
-% preTag=preTag(:,preTemp(1:10));
-% post=testSet(:,find(testSet(4,:)>0.7980));
-% postTag=testFlag(:,find(testSet(4,:)>0.7980));
-% postTemp=randperm(length(post));
-% post=post(:,postTemp(1:20));
-% postTag=postTag(:,postTemp(1:20));
-% a=[pre post];
-% figTemp=randperm(length(a));
-% a=a(:,figTemp);
-% b=[preTag postTag];
-% b=b(figTemp);
-%%
-%541   %共选20个点 前10后10 或者前5后15
+%541   
 pre=testSet(:,find(testSet(4,:)<0.7980));
 preTag=testFlag(:,find(testSet(4,:)<0.7980));
 preTemp=randperm(length(pre));
