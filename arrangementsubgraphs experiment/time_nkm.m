@@ -13,7 +13,7 @@ simuTime=toc;
 %%
 %bp
 tic
-data=algorithm2(5,4,1,100,0.01,0.99);
+data=algorithm2(5,4,1,150,0.01,0.99);
 dataSet=data(:,1:4);
 flag=data(:,5);
 P_train = dataSet';
@@ -30,4 +30,3 @@ annTime=toc;
 %%
 RMSE=sqrt(sum((T_sim-contrast(:,5)').^2)/length(T_sim));
 decrease=(simuTime-annTime)/simuTime;
-save('time541.mat','annTime','simuTime','RMSE','decrease');
