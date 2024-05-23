@@ -1,7 +1,7 @@
 load('E:\Datasets\dataAll.mat')
 RMSES=[];
 TIMES=[];
-for i=1:10
+for i=1:5
  %541
     dataSet541=data541(:,1:4);
     flag541=data541(:,5);
@@ -120,15 +120,12 @@ for i=1:10
     net.trainParam.goal = 1e-6;
     net.trainParam.showWindow=false;
     net.trainParam.showCommandLine=false;
-    tic
     net = train(net,P_train,T_train);
-    trainTime=toc;
     
     T_sim = sim(net,testSet);
     RMSE=sqrt(sum((T_sim-testFlag).^2)/N);
     RMSES=[RMSES RMSE];
-    TIMES=[TIMES trainTime];
     save(num2str(i),'net','testSet','testFlag')
 end
-save nAllRMSES1000 RMSES
+save nAllRMSES RMSES
 mean(RMSES)
